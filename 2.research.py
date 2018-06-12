@@ -9,6 +9,10 @@ from Tools import Tools
 
 """
 调研一些想法
+可调研的问题
+1、是否周三是lucky day
+2、所有股票，两个交易日的成交量和收盘价格对第三天的影响
+3、单个股票，两个交易日的成交量和收盘价格对第三天的影响
 """
 
 
@@ -46,6 +50,10 @@ class Research(object):
         stock_list = self.stock_data.get_all_600_code()
         for stock in stock_list:
             ts.get_hist_data(stock)
+
+    # 获得一支股票n天的收盘价
+    def get_n_close(self, code):
+        ts.get_hist_data('600848')
 
 
 def main():
